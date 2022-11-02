@@ -1,0 +1,12 @@
+#meni ul li {
+    display: inline;
+    padding: 3px;
+} 
+#meni ul {
+    margin: 0;
+} 
+.smjer {
+    float: left;
+    width: 25%;
+    box-sizing: border-box;
+}
