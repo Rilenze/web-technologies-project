@@ -10,3 +10,13 @@
     width: 25%;
     box-sizing: border-box;
 }
+#meni {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 14px;
+}
+body {
+    margin: 0;
+}
