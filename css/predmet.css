@@ -4,7 +4,14 @@
 } 
 #meni ul {
     margin: 0;
+}
+#meni a {
+    color: white;
+    text-decoration: none;
 } 
+#meni a:hover {
+    background-color: gray;
+}
 .smjer {
     float: left;
     width: 25%;
@@ -14,9 +21,22 @@
     overflow: hidden;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     padding: 10px 14px;
+    background-color: black;
+    
 }
-body {
-    margin: 0;
+.bsc_1, .bsc_2, .bsc_3, .msc_1, .msc_2, .rs_1, .rs_2 {
+    display: grid;
+    background-color: gray;
+    padding: 10px;
+}
+.redovni_predmet {
+    padding: 20px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+#ri {
+    margin-top: 130px; 
 }
