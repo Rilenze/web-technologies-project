@@ -29,14 +29,35 @@
 }
 .bsc_1, .bsc_2, .bsc_3, .msc_1, .msc_2, .rs_1, .rs_2 {
     display: grid;
-    background-color: gray;
+    grid-template-columns: auto auto auto ;
     padding: 10px;
+    gap: 10px;
+}
+#ri h1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
 }
 .redovni_predmet {
     padding: 20px;
     background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+.izborni_predmet {
+    padding: 20px;
+    background-color: powderblue;
+    text-align: center;
+}
+.neaktivni_predmet {
+    padding: 20px;
+    background-color: gray;
+    text-align: center;
 }
 #ri {
     margin-top: 130px; 
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
