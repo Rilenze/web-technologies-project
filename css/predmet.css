@@ -1,32 +1,3 @@
-/*#meni ul li {
-    display: inline;
-    padding: 3px;
-} 
-#meni ul {
-    margin: 0;
-}
-#meni a {
-    color: white;
-    text-decoration: none;
-} 
-#meni a:hover {
-    background-color: gray;
-}
-.smjer {
-    float: left;
-    width: 25%;
-    box-sizing: border-box;
-}
-#meni {
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 14px;
-    background-color: black;
-    
-}*/
 body {
     margin: 0;
 }
@@ -40,7 +11,6 @@ body {
 #meni > .smjer {
     flex-basis: 100%;
     text-align: center;
-    /*align-items: center;*/
 }
 #meni ul li {
     list-style: none;
@@ -49,7 +19,6 @@ body {
 }
 #meni a {
     text-decoration: none;
-    /*display: block;*/
     color: white;
 }
 .bsc_1, .bsc_2, .bsc_3, .msc_1, .msc_2, .rs_1, .rs_2 {
@@ -63,17 +32,17 @@ h1, h2 {
     text-align: center;
 }
 .redovni_predmet {
-    padding: 20px;
+    padding: 10px;
     background-color: white;
     text-align: center;
 }
 .izborni_predmet {
-    padding: 20px;
+    padding: 10px;
     background-color: powderblue;
     text-align: center;
 }
 .neaktivni_predmet {
-    padding: 20px;
+    padding: 10px;
     background-color: gray;
     text-align: center;
 }
@@ -85,9 +54,14 @@ h1, h2 {
     margin-left: auto;
     margin-right: auto;
 }
-@media(max-width: 450px) {
+@media(max-width: 770px) {
     #meni {
         flex-direction: column;
+        position: static;
+    }
+    #meni > .smjer {
+        flex-basis: auto;
+        text-align: left;
     }
 }
 html {
