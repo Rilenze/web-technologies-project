@@ -33,9 +33,7 @@
     padding: 10px;
     gap: 10px;
 }
-#ri h1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+h1, h2 {
     text-align: center;
 }
 .redovni_predmet {
