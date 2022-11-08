@@ -21,6 +21,9 @@ body {
     text-decoration: none;
     color: white;
 }
+#meni a:hover {
+    background-color: gray;
+}
 .bsc_1, .bsc_2, .bsc_3, .msc_1, .msc_2, .rs_1, .rs_2 {
     display: grid;
     grid-template-columns: 
