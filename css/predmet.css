@@ -1,4 +1,4 @@
-#meni ul li {
+/*#meni ul li {
     display: inline;
     padding: 3px;
 } 
@@ -26,10 +26,36 @@
     padding: 10px 14px;
     background-color: black;
     
+}*/
+body {
+    margin: 0;
+}
+#meni {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+}
+#meni > .smjer {
+    flex-basis: 100%;
+    text-align: center;
+    /*align-items: center;*/
+}
+#meni ul li {
+    list-style: none;
+    display: inline;
+    padding: 3px;
+}
+#meni a {
+    text-decoration: none;
+    /*display: block;*/
+    color: white;
 }
 .bsc_1, .bsc_2, .bsc_3, .msc_1, .msc_2, .rs_1, .rs_2 {
     display: grid;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: 
+        repeat(auto-fit, minmax(200px,200px));
     padding: 10px;
     gap: 10px;
 }
@@ -52,7 +78,7 @@ h1, h2 {
     text-align: center;
 }
 #ri {
-    margin-top: 130px; 
+    margin-top: 50px; 
 }
 .center {
     display: block;
