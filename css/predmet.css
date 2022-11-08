@@ -85,3 +85,11 @@ h1, h2 {
     margin-left: auto;
     margin-right: auto;
 }
+@media(max-width: 500px) {
+    #meni {
+        flex-direction: column;
+    }
+}
+html {
+    scroll-padding-top: 170px;
+}
