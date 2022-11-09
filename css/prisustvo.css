@@ -9,3 +9,9 @@
 .tabela {
     width: 100%;
 }
+.zeleno {
+    background-color: rgb(69, 190, 69);
+}
+.crveno {
+    background-color: rgb(245, 65, 65);
+}
