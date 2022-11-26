@@ -1,13 +1,18 @@
-.tabela, th, td {
+table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     text-align: center;
+    padding: 0;
 }
+table {
+    width: 100%;
+}
+td > table > tr > td{
+    height: 30px;
+}
+/*
 .red {
    height: 40px; 
-}
-.tabela {
-    width: 100%;
 }
 .zeleno {
     background-color: rgb(69, 190, 69);
@@ -29,4 +34,4 @@
 }
 .ostale {
     width: 30%;
-}
+}*/

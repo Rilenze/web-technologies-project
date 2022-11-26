@@ -1,4 +1,6 @@
 let TabelaPrisustvo = function(divRef, podaci) {
+    trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
+
     let naslovi = ['Ime i prezime', 'Index', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII-XV'];
     
     let table = document.createElement('table');
@@ -29,7 +31,46 @@ let TabelaPrisustvo = function(divRef, podaci) {
         row.appendChild(cellIndeks);
 
         //sedmice
-        for (let j=1; j<9; j++) {
+        for (let j=1; j<9; j++) { 
+            if (j == trenutnaSedmica) {
+                let cellMiniTabela = document.createElement('td');
+                let miniTabela = document.createElement('table');
+
+                // Vjezbe i predavanja
+                let miniRow = document.createElement('tr');
+
+                for (let k=1; k<=brojPredavanjaSedmicno; k++) {
+                    let cellP = document.createElement('td');
+                    let tekstP = 'P' + k;
+                    let polje = document.createTextNode(tekstP);
+                    cellP.appendChild(polje);
+                    miniRow.appendChild(cellP);
+                } 
+
+                for (let k=1; k<=brojVjezbiSedmicno; k++) {
+                    let cellV = document.createElement('td');
+                    let tekstV = 'V' + k;
+                    let polje = document.createTextNode(tekstV);
+                    cellV.appendChild(polje);
+                    miniRow.appendChild(cellV);
+                }
+                miniTabela.appendChild(miniRow); 
+
+                // kockice 
+                
+                let miniRow2 = document.createElement('tr');
+                for (let k=1; k<=brojPredavanjaSedmicno + brojVjezbiSedmicno; k++) {
+                    let cell = document.createElement('td');
+                    miniRow2.appendChild(cell);
+                }
+                miniTabela.appendChild(miniRow2); 
+
+                cellMiniTabela.appendChild(miniTabela);
+                row.appendChild(cellMiniTabela);
+
+                continue;
+            } 
+
             let imaPrisustvo = false;
             podaci.prisustva.forEach(prisustvo => {
                 if (prisustvo.sedmica == j && prisustvo.index == podaci.studenti[i].index) {
