@@ -57,10 +57,36 @@ let TabelaPrisustvo = function(divRef, podaci) {
                 miniTabela.appendChild(miniRow); 
 
                 // kockice 
-                
+                let prisustvaStudenta = null;
+                podaci.prisustva.forEach(prisustvo => {
+                    if (prisustvo.index == podaci.studenti[i].index && prisustvo.sedmica == trenutnaSedmica) {
+                        prisustvaStudenta = prisustvo;
+                    }
+                });
+
                 let miniRow2 = document.createElement('tr');
-                for (let k=1; k<=brojPredavanjaSedmicno + brojVjezbiSedmicno; k++) {
+                for (let k=1; k<=brojPredavanjaSedmicno; k++) {
                     let cell = document.createElement('td');
+                    
+                    if (prisustvaStudenta != null) {
+                        if (k <= prisustvaStudenta.predavanja)
+                            cell.style.backgroundColor = "rgb(69, 190, 69)";
+                        else if (k > prisustvaStudenta.predavanja)
+                            cell.style.backgroundColor = "rgb(245, 65, 65)";
+                    }
+
+                    miniRow2.appendChild(cell);
+                }
+                for (let k=1; k<=brojVjezbiSedmicno; k++) {
+                    let cell = document.createElement('td');
+                    
+                    if (prisustvaStudenta != null) {
+                        if (k <= prisustvaStudenta.vjezbe)
+                            cell.style.backgroundColor = "rgb(69, 190, 69)";
+                        else if (k > prisustvaStudenta.vjezbe)
+                            cell.style.backgroundColor = "rgb(245, 65, 65)";
+                    }
+
                     miniRow2.appendChild(cell);
                 }
                 miniTabela.appendChild(miniRow2); 
