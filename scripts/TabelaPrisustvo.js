@@ -1,5 +1,6 @@
 let TabelaPrisustvo = function(divRef, podaci) {
-    
+
+    let trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
     let brojPredavanjaSedmicno = podaci.brojPredavanjaSedmicno;
     let brojVjezbiSedmicno = podaci.brojVjezbiSedmicno;
 
@@ -66,7 +67,6 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
 
     let maksimalnaSedmica = sedmice[sedmice.length-1];
-    let trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
 
     let naslovi = new Map([
         [1, 'I'],
@@ -223,30 +223,43 @@ let TabelaPrisustvo = function(divRef, podaci) {
         table.appendChild(row);
     } 
     
-
-    
-    
-    
-    
-    
     divRef.appendChild(table); 
 
-    /*
+    
+
+
+    //DRUGI ZADATAK
+    let divBelow = document.createElement('div');
+    divBelow.style = "margin-top: 10px";
+
+    let btnLijevo = document.createElement('button');
+    let btnDesno = document.createElement('button');
+    btnLijevo.innerHTML = '<i class="fa-solid fa-arrow-left fa-10x"></i>';
+    btnDesno.innerHTML = '<i class="fa-solid fa-arrow-right fa-10x"></i>';
+    btnDesno.style = "float: right;";
+
+    divBelow.appendChild(btnLijevo);
+    divBelow.appendChild(btnDesno);
+
+    divRef.appendChild(divBelow);
+
     //privatni atributi modula
 
     //implementacija metoda
     let sljedecaSedmica = function() {
-
+        
     }
     
     let prethodnaSedmica = function() {
 
     }
 
+    btnLijevo.onclick = prethodnaSedmica;
+    btnDesno.onclick = sljedecaSedmica;
     return {
         sljedecaSedmica: sljedecaSedmica,
         prethodnaSedmica: prethodnaSedmica
-    }*/
+    }
 };
 
 

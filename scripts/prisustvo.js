@@ -7,9 +7,7 @@ let div = document.getElementById("table");
 prisustva:[{sedmica:1,predavanja:1,vjezbe:1,index:12345}], predmet:"WT",
 brojPredavanjaSedmicno:3, brojVjezbiSedmicno:2});*/
 
-//pozivanje metoda
-//prisustvo.sljedecaSedmica();
-//prisustvo.prethodnaSedmica();
+
 
 
 let prisustvo = TabelaPrisustvo(div, {
@@ -104,3 +102,8 @@ let prisustvo = TabelaPrisustvo(div, {
     "brojVjezbiSedmicno": 2
     }
 );
+
+
+//pozivanje metoda
+//prisustvo.sljedecaSedmica();
+//prisustvo.prethodnaSedmica();
