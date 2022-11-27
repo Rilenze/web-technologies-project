@@ -35,7 +35,7 @@ let prisustvo = TabelaPrisustvo(div, {
         "index": 12346
         },
         {
-        "sedmica": 2,
+        "sedmica": 3,
         "predavanja": 1,
         "vjezbe": 0,
         "index": 12345

@@ -3,8 +3,12 @@ let TabelaPrisustvo = function(divRef, podaci) {
     let brojPredavanjaSedmicno = podaci.brojPredavanjaSedmicno;
     let brojVjezbiSedmicno = podaci.brojVjezbiSedmicno;
 
+    let setSedmica = new Set();
+
     let ispravnost = true;
     podaci.prisustva.forEach(prisustvo => {
+        setSedmica.add(prisustvo.sedmica);
+
         let postojiStudent = false;
         podaci.studenti.forEach(student => {
             if (prisustvo.index == student.index) {
@@ -43,6 +47,17 @@ let TabelaPrisustvo = function(divRef, podaci) {
             }
         });
     });
+
+    
+
+    let sedmice = Array.from(setSedmica).sort();
+
+    for (let i=1; i<sedmice.length; i++) {
+        if (sedmice[i] != sedmice[i-1]+1) {
+            ispravnost = false;
+            break;
+        }
+    }
 
     if (!ispravnost) {
         divRef.innerText = "Podaci o prisustvu nisu validni!";
