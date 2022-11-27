@@ -141,6 +141,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
             if (j == trenutnaSedmica) {
                 let cellMiniTabela = document.createElement('td');
                 let miniTabela = document.createElement('table');
+                miniTabela.style = "table-layout: fixed;";
 
                 // Vjezbe i predavanja
                 let miniRow = document.createElement('tr');
