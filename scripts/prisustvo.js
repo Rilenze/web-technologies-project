@@ -24,7 +24,7 @@ let prisustvo = TabelaPrisustvo(div, {
     ],
     "prisustva": [{
         "sedmica": 1,
-        "predavanja": 2,
+        "predavanja": 1,
         "vjezbe": 1,
         "index": 12345
         },
@@ -46,7 +46,7 @@ let prisustvo = TabelaPrisustvo(div, {
         "vjezbe": 1,
         "index": 12346
         }
-    ],
+],
     "predmet": "Razvoj mobilnih aplikacija",
     "brojPredavanjaSedmicno": 2,
     "brojVjezbiSedmicno": 2

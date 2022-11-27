@@ -1,4 +1,55 @@
 let TabelaPrisustvo = function(divRef, podaci) {
+    
+    let brojPredavanjaSedmicno = podaci.brojPredavanjaSedmicno;
+    let brojVjezbiSedmicno = podaci.brojVjezbiSedmicno;
+
+    let ispravnost = true;
+    podaci.prisustva.forEach(prisustvo => {
+        let postojiStudent = false;
+        podaci.studenti.forEach(student => {
+            if (prisustvo.index == student.index) {
+                postojiStudent = true;
+            }
+        });
+        if (!postojiStudent) {
+            ispravnost = false;
+            return;
+        }
+
+        if (prisustvo.predavanja > brojPredavanjaSedmicno 
+            || prisustvo.vjezbe > brojVjezbiSedmicno
+            || prisustvo.predavanja < 0
+            || prisustvo.vjezbe < 0) {
+            ispravnost = false;
+            return;
+        }
+        podaci.prisustva.forEach(prisustvo2 => {
+            if (prisustvo != prisustvo2) {
+                if (prisustvo.sedmica == prisustvo2.sedmica 
+                    && prisustvo.index == prisustvo2.index)
+                    ispravnost = false;
+                    return;
+            }
+        });
+    });
+
+    podaci.studenti.forEach(student => {
+        podaci.studenti.forEach(student2 => {
+            if (student != student2) {
+                if (student.index == student2.index) {
+                    ispravnost = false;
+                    return;
+                }
+            }
+        });
+    });
+
+    if (!ispravnost) {
+        divRef.innerText = "Podaci o prisustvu nisu validni!";
+        return;
+    }
+
+
     trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
 
     let naslovi = ['Ime i prezime', 'Index', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII-XV'];
@@ -15,8 +66,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
     table.appendChild(headerRow);
 
-    let brojPredavanjaSedmicno = podaci.brojPredavanjaSedmicno;
-    let brojVjezbiSedmicno = podaci.brojVjezbiSedmicno;
+    
 
     for (let i=0; i<podaci.studenti.length; i++) {
         // ime i indeks
