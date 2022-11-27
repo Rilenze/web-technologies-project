@@ -7,6 +7,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
     let setSedmica = new Set();
 
+    // Testiranje ispravnosti podataka
     let ispravnost = true;
     podaci.prisustva.forEach(prisustvo => {
         setSedmica.add(prisustvo.sedmica);
@@ -66,6 +67,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
         return;
     }
 
+    // Pravljenje tabele
 
     let maksimalnaSedmica = sedmice[sedmice.length-1];
 
@@ -94,11 +96,13 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
     let header1 = document.createElement('th');
     let textHeader1 = document.createTextNode('Ime i prezime');
+    header1.style = "width: 15%;";
     header1.appendChild(textHeader1);
     headerRow.appendChild(header1);
 
     let header2 = document.createElement('th');
     let textHeader2 = document.createTextNode('Index');
+    header2.style = "width: 10%;";
     header2.appendChild(textHeader2);
     headerRow.appendChild(header2);
     
@@ -194,6 +198,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
                 miniTabela.appendChild(miniRow2); 
 
                 cellMiniTabela.appendChild(miniTabela);
+                cellMiniTabela.style = "width: 12%;";
                 row.appendChild(cellMiniTabela);
 
                 continue;
@@ -206,6 +211,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
                     let procenat = 100 * (prisustvo.predavanja + prisustvo.vjezbe) / (brojPredavanjaSedmicno + brojVjezbiSedmicno);
                     procenat += '%';
                     let polje = document.createTextNode(procenat);
+                    cellPrisustvo.style = "width: 5%;";
                     cellPrisustvo.appendChild(polje);
                     row.appendChild(cellPrisustvo);
                     imaPrisustvo = true;
@@ -253,7 +259,11 @@ let TabelaPrisustvo = function(divRef, podaci) {
         
         for (let i=1; i<table.rows.length; i++) {
             let cell = table.rows[i].cells[trenutnaSedmica];
+            cell.style = "width: 5%;";
             let cellSljedeca = table.rows[i].cells[trenutnaSedmica+1];
+            cellSljedeca.style = "width: 12%;";
+
+
 
             cell.innerHTML = "";
             cellSljedeca.innerHTML = "";
@@ -289,6 +299,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
                     let procenat = 100 * (prisustvo.predavanja + prisustvo.vjezbe) / (brojPredavanjaSedmicno + brojVjezbiSedmicno);
                     procenat += '%';
                     cell.innerHTML = procenat;
+                    //cell.style = "width: 5%;";
                 }
                 // nalazenje studenta za sljedece prisustvo
                 if (prisustvo.index.toString() == table.rows[i].cells[1].innerText 
@@ -329,6 +340,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
 
             cellSljedeca.appendChild(miniTabela);
+            //cellSljedeca.style = "width: 12%;";
             
         } 
 
@@ -340,7 +352,9 @@ let TabelaPrisustvo = function(divRef, podaci) {
         
         for (let i=1; i<table.rows.length; i++) {
             let cell = table.rows[i].cells[trenutnaSedmica+2];
+            cell.style = "width: 5%;";
             let cellSljedeca = table.rows[i].cells[trenutnaSedmica+1];
+            cellSljedeca.style = "width: 12%;";
 
             cell.innerHTML = "";
             cellSljedeca.innerHTML = "";

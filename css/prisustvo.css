@@ -14,12 +14,6 @@ td > table > tr > td{
 .fa-solid {
     padding: 20px;
 }
-.fa-arrow-right {
-    float: right;
-}
-.fa-arrow-left {
-    float: left;
-}
 
 /*
 .red {
@@ -36,12 +30,6 @@ td > table > tr > td{
 }
 .indexi {
     width: 10%;
-}
-.sedmice {
-    width: 5%;
-}
-.trenutna {
-    width: 12%;
 }
 .ostale {
     width: 30%;
