@@ -20,7 +20,7 @@ let prisustvo = TabelaPrisustvo(div, {
         "index": 14352
         },
         {
-        "ime": "Šaban Saulić",
+        "ime": "Šaban Šaulić",
         "index": 15354
         }
     ],
@@ -61,46 +61,52 @@ let prisustvo = TabelaPrisustvo(div, {
         "index": 18714
         },
         {
+            "sedmica": 4,
+            "predavanja": 2,
+            "vjezbe": 1,
+            "index": 18714
+        },
+        {
+            "sedmica": 4,
+            "predavanja": 3,
+            "vjezbe": 2,
+            "index": 14352
+        },
+        {
+            "sedmica": 5,
+            "predavanja": 1,
+            "vjezbe": 2,
+            "index": 18714
+        },
+        {
+            "sedmica": 6,
+            "predavanja": 0,
+            "vjezbe": 2,
+            "index": 18714
+        },
+        {
+            "sedmica": 8,
+            "predavanja": 3,
+            "vjezbe": 1,
+            "index": 15354
+        },
+        {
+            "sedmica": 7,
+            "predavanja": 3,
+            "vjezbe": 1,
+            "index": 18714
+        },
+        {
         "sedmica": 3,
         "predavanja": 3,
         "vjezbe": 2,
         "index": 15354
         },
-        {
-        "sedmica": 4,
-        "predavanja": 2,
-        "vjezbe": 1,
-        "index": 18714
-        },
-        {
-        "sedmica": 4,
-        "predavanja": 3,
-        "vjezbe": 2,
-        "index": 14352
-        },
-        {
-        "sedmica": 5,
-        "predavanja": 1,
-        "vjezbe": 2,
-        "index": 18714
-        },
-        {
-        "sedmica": 6,
-        "predavanja": 0,
-        "vjezbe": 2,
-        "index": 18714
-        },
-        {
-        "sedmica": 7,
-        "predavanja": 3,
-        "vjezbe": 1,
-        "index": 18714
-        },
-],
+    ],
     "predmet": "Razvoj programskih rješenja",
     "brojPredavanjaSedmicno": 3,
     "brojVjezbiSedmicno": 2
-    }
+}
 );
 
 
