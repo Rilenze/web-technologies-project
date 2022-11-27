@@ -65,23 +65,59 @@ let TabelaPrisustvo = function(divRef, podaci) {
     }
 
 
-    trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
+    let maksimalnaSedmica = sedmice[sedmice.length-1];
+    let trenutnaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
 
-    let naslovi = ['Ime i prezime', 'Index', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII-XV'];
-    
+    let naslovi = new Map([
+        [1, 'I'],
+        [2, 'II'],
+        [3, 'III'],
+        [4, 'IV'],
+        [5, 'V'],
+        [6, 'VI'],
+        [7, 'VII'],
+        [8, 'VIII'],
+        [9, 'IX'],
+        [10, 'X'],
+        [11, 'XI'],
+        [12, 'XII'],
+        [13, 'XIII'],
+        [14, 'XIV'],
+        [15, 'XV'],
+    ]);
+ 
+// naslovi tabele    
+
     let table = document.createElement('table');
     let headerRow = document.createElement('tr');
 
-    naslovi.forEach(tekst => {
+    let header1 = document.createElement('th');
+    let textHeader1 = document.createTextNode('Ime i prezime');
+    header1.appendChild(textHeader1);
+    headerRow.appendChild(header1);
+
+    let header2 = document.createElement('th');
+    let textHeader2 = document.createTextNode('Index');
+    header2.appendChild(textHeader2);
+    headerRow.appendChild(header2);
+    
+
+    for (let i=1; i<=maksimalnaSedmica; i++) {
         let header = document.createElement('th');
-        let textHeader = document.createTextNode(tekst);
+        let textHeader = document.createTextNode(naslovi.get(i));
         header.appendChild(textHeader);
         headerRow.appendChild(header);
-    });
+    }
+
+    let header3 = document.createElement('th');
+    let textHeader3 = document.createTextNode(naslovi.get(maksimalnaSedmica+1) + '-XV');
+    header3.appendChild(textHeader3);
+    headerRow.appendChild(header3);
 
     table.appendChild(headerRow);
 
-    
+
+//elementi tabele
 
     for (let i=0; i<podaci.studenti.length; i++) {
         // ime i indeks
@@ -96,7 +132,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
         row.appendChild(cellIndeks);
 
         //sedmice
-        for (let j=1; j<9; j++) { 
+        for (let j=1; j<=maksimalnaSedmica; j++) { 
             if (j == trenutnaSedmica) {
                 let cellMiniTabela = document.createElement('td');
                 let miniTabela = document.createElement('table');
@@ -181,7 +217,8 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
         }
 
-
+        let cellPrisustvo = document.createElement('td');
+        row.appendChild(cellPrisustvo);
 
         table.appendChild(row);
     } 
