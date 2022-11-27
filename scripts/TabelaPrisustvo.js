@@ -299,7 +299,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
 
 
             // KOCKICE 
-            
+
             let miniRow2 = document.createElement('tr');
             for (let k=1; k<=brojPredavanjaSedmicno; k++) {
                 let cellKocka = document.createElement('td');
@@ -335,7 +335,89 @@ let TabelaPrisustvo = function(divRef, podaci) {
     }
     
     let prethodnaSedmica = function() {
+        if (trenutnaSedmica == 1) return;
+        trenutnaSedmica -= 1;     
+        
+        for (let i=1; i<table.rows.length; i++) {
+            let cell = table.rows[i].cells[trenutnaSedmica+2];
+            let cellSljedeca = table.rows[i].cells[trenutnaSedmica+1];
 
+            cell.innerHTML = "";
+            cellSljedeca.innerHTML = "";
+
+
+            let miniTabela = document.createElement('table');
+
+            // Vjezbe i predavanja
+            let miniRow = document.createElement('tr');
+
+            for (let k=1; k<=brojPredavanjaSedmicno; k++) {
+                let cellP = document.createElement('td');
+                let tekstP = 'P' + k;
+                let polje = document.createTextNode(tekstP);
+                cellP.appendChild(polje);
+                miniRow.appendChild(cellP);
+            } 
+
+            for (let k=1; k<=brojVjezbiSedmicno; k++) {
+                let cellV = document.createElement('td');
+                let tekstV = 'V' + k;
+                let polje = document.createTextNode(tekstV);
+                cellV.appendChild(polje);
+                miniRow.appendChild(cellV);
+            }
+            miniTabela.appendChild(miniRow); 
+            
+            let prisustvaStudenta = null; 
+
+            podaci.prisustva.forEach(prisustvo => { 
+                if (prisustvo.sedmica == trenutnaSedmica+1 
+                    && prisustvo.index.toString() == table.rows[i].cells[1].innerText) {
+                    let procenat = 100 * (prisustvo.predavanja + prisustvo.vjezbe) / (brojPredavanjaSedmicno + brojVjezbiSedmicno);
+                    procenat += '%';
+                    cell.innerHTML = procenat;
+                }
+                // nalazenje studenta za sljedece prisustvo
+                if (prisustvo.index.toString() == table.rows[i].cells[1].innerText 
+                && prisustvo.sedmica == trenutnaSedmica) {
+                    prisustvaStudenta = prisustvo;
+                } 
+            });
+
+
+            // KOCKICE 
+            
+            let miniRow2 = document.createElement('tr');
+            for (let k=1; k<=brojPredavanjaSedmicno; k++) {
+                let cellKocka = document.createElement('td');
+                
+                if (prisustvaStudenta != null) {
+                    if (k <= prisustvaStudenta.predavanja)
+                        cellKocka.style.backgroundColor = "rgb(69, 190, 69)";
+                    else if (k > prisustvaStudenta.predavanja)
+                        cellKocka.style.backgroundColor = "rgb(245, 65, 65)";
+                }
+
+                miniRow2.appendChild(cellKocka);
+            }
+            for (let k=1; k<=brojVjezbiSedmicno; k++) {
+                let cellKocka = document.createElement('td');
+                
+                if (prisustvaStudenta != null) {
+                    if (k <= prisustvaStudenta.vjezbe)
+                        cellKocka.style.backgroundColor = "rgb(69, 190, 69)";
+                    else if (k > prisustvaStudenta.vjezbe)
+                        cellKocka.style.backgroundColor = "rgb(245, 65, 65)";
+                }
+
+                miniRow2.appendChild(cellKocka);
+            }
+            miniTabela.appendChild(miniRow2); 
+
+
+            cellSljedeca.appendChild(miniTabela);
+            
+        } 
     }
 
     btnLijevo.onclick = prethodnaSedmica;
