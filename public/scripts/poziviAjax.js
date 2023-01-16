@@ -9,6 +9,20 @@ const PoziviAjax = (()=>{
     function impl_getPredmeti(fnCallback){
     }
     function impl_postLogin(username,password,fnCallback){
+        const ajax = XMLHttpRequest();
+
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4 && ajax.status == 200){
+                var jsonRez = JSON.parse(ajax.responseText);
+                fnCallback(jsonRez.pokusaj.poruka,jsonRez.pokusaj.broj_pokusaja);
+            }
+            else if (ajax.readyState == 4)
+                fnCallback(ajax.statusText,null);
+        }
+
+        ajax.open("POST", "http://localhost:3000/login", true);
+        ajax.setRequestHeader("Content-Type", "application/json");
+        ajax.send(JSON.stringify({username:username, password:password}));
     }
     function impl_postLogout(fnCallback){
     }

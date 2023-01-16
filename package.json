@@ -1,0 +1,23 @@
+{
+  "name": "wt22p18714",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rburovic1@bitbucket.org/rburovic1/wt22p18714.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/rburovic1/wt22p18714/issues"
+  },
+  "homepage": "https://bitbucket.org/rburovic1/wt22p18714#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
