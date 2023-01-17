@@ -9,12 +9,13 @@ const PoziviAjax = (()=>{
     function impl_getPredmeti(fnCallback){
     }
     function impl_postLogin(username,password,fnCallback){
-        const ajax = XMLHttpRequest();
+        console.log("jebem li ti nanulicu");
+        const ajax = new XMLHttpRequest();
 
         ajax.onreadystatechange = function() {
             if (ajax.readyState == 4 && ajax.status == 200){
                 var jsonRez = JSON.parse(ajax.responseText);
-                fnCallback(jsonRez.pokusaj.poruka,jsonRez.pokusaj.broj_pokusaja);
+                fnCallback(jsonRez.poruka);
             }
             else if (ajax.readyState == 4)
                 fnCallback(ajax.statusText,null);

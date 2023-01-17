@@ -1,5 +1,5 @@
 const express = require("express");
-const session = require(express-sesion);
+const session = require("express-session");
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -17,7 +17,9 @@ app.get('/', function(req, res){
 });
 
 app.post('/login', function(req, res){
-    
+    console.log("fadilje");
+
+    res.json({"poruka" : "Uspješna prijava"});
 });
 
 app.listen(3000);
