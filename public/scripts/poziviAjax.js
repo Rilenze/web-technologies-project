@@ -9,7 +9,6 @@ const PoziviAjax = (()=>{
     function impl_getPredmeti(fnCallback){
     }
     function impl_postLogin(username,password,fnCallback){
-        console.log("jebem li ti nanulicu");
         const ajax = new XMLHttpRequest();
 
         ajax.onreadystatechange = function() {
@@ -18,7 +17,7 @@ const PoziviAjax = (()=>{
                 fnCallback(jsonRez.poruka);
             }
             else if (ajax.readyState == 4)
-                fnCallback(ajax.statusText,null);
+                fnCallback(ajax.statusText);
         }
 
         ajax.open("POST", "http://localhost:3000/login", true);
