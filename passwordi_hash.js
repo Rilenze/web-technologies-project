@@ -10,4 +10,12 @@ async function dajHash() {
     });
 }
 
-dajHash();
+async function dajHash2() {
+    const password = "1";
+    const hashPassword = await bcrypt.hash(password, 10);
+    console.log({
+        password,
+        hashPassword
+    });
+}
+dajHash2();

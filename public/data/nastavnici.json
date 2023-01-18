@@ -18,5 +18,16 @@
     "predmeti": [
     "PREDMET1"
     ]
+    },
+    {
+    "nastavnik": {
+    "username": "r",
+    "password_hash": "$2b$10$/ZTbOPd71MLKkzjfxBISfO.oErW7OGxtELsqW6XDTbMi3/ruN3ht2"
+    },
+    "predmeti": [
+    "PREDMET1",
+    "PREDMET2",
+    "PREDMET3"
+    ]
     }
 ]

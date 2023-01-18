@@ -6,9 +6,14 @@ let porukaElement = document.getElementById("poruka");
 
 dugmeLogin.addEventListener("click", function(event){
     event.preventDefault();
-    PoziviAjax.postLogin(username.value, password.value, ispisi);
+    PoziviAjax.postLogin(username.value, password.value, callBackLogin);
 });
 
-function ispisi(poruka) {
-    porukaElement.innerHTML = poruka;
+function callBackLogin(error, data) {
+    if(error == null && data == "Uspješna prijava") { 
+        window.location.href="http://localhost:3000/predmeti.html";
+    }
+    else { 
+        porukaElement.innerHTML = data;
+    }
 }
