@@ -4,6 +4,19 @@ const PoziviAjax = (()=>{
     //odgovora
     //ako postoji greška poruka se prosljeđuje u error parametar callback-a, a data je tada null
     function impl_getPredmet(naziv,fnCallback){
+        const ajax = new XMLHttpRequest();
+
+        ajax.onreadystatechange = function() {
+            if (ajax.readyState == 4 && ajax.status == 200){
+                const JSONrez = JSON.parse(ajax.responseText);
+                fnCallback(null, JSONrez);
+            }
+            else if (ajax.readyState == 4)
+                fnCallback(ajax.responseText, null);
+        }
+
+        ajax.open("GET", "http://localhost:3000/predmet/" + naziv, true);
+        ajax.send();
     }
     // vraća listu predmeta za loginovanog nastavnika ili grešku da nastavnik nije loginovan
     function impl_getPredmeti(fnCallback){

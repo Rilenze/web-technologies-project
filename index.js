@@ -59,6 +59,17 @@ app.post('/logout', function(req, res){
     res.end();
 });
 
+app.get('/predmet/:NAZIV', function(req, res){
+    fs.readFile("public/data/prisustva.json", function(err, data){
+        const prisustva = JSON.parse(data);
+
+        const prisustvaZaPredmet = prisustva.find(p => p.predmet == req.params.NAZIV);
+
+        if(prisustvaZaPredmet) res.json(prisustvaZaPredmet);
+        else res.status(404).send("Greška! Ne postoji predmet u bazi!");
+    });
+});
+
 
 
 app.listen(3000);
