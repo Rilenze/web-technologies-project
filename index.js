@@ -56,7 +56,7 @@ app.post('/login', async function(req, res){
 app.post('/logout', function(req, res){
     req.session.username = null;
     req.session.predmeti = null;
-    res.redirect('/login');
+    res.end();
 });
 
 

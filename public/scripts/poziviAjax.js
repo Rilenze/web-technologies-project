@@ -43,11 +43,10 @@ const PoziviAjax = (()=>{
 
         ajax.onreadystatechange = function() {
             if (ajax.readyState == 4 && ajax.status == 200){
-                var jsonRez = JSON.parse(ajax.responseText);
-                fnCallback(jsonRez.poruka);
+                fnCallback(null, ajax.responseText);
             }
             else if (ajax.readyState == 4)
-                fnCallback(ajax.statusText);
+                fnCallback(ajax.statusText, null);
         }
 
         ajax.open("POST", "http://localhost:3000/logout", true);
