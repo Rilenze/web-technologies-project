@@ -70,6 +70,37 @@ app.get('/predmet/:NAZIV', function(req, res){
     });
 });
 
+app.post('/prisustvo/predmet/:NAZIV/student/:index', function(req, res){
+    const sedmica = req.body['sedmica'];
+    const predavanja = req.body['predavanja'];
+    const vjezbe = req.body['vjezbe'];
+
+    fs.readFile('public/data/prisustva.json', function(err, data){
+        let prisustvaPredmeta = JSON.parse(data);
+
+        for (let i=0; i<prisustvaPredmeta.length; i++) {
+            for (let j=0; j<prisustvaPredmeta[i].prisustva.length; j++) {
+                let element = prisustvaPredmeta[i].prisustva[j];
+                if (element.index == req.params.index && element.sedmica == sedmica) {
+                    prisustvaPredmeta[i].prisustva[j].predavanja = predavanja;
+                    prisustvaPredmeta[i].prisustva[j].vjezbe = vjezbe;
+                    break;
+                }
+            }
+        }
+
+        fs.writeFile('public/data/prisustva.json', JSON.stringify(prisustvaPredmeta), function(err){
+            if (err) console.log(err);
+            console.log("Spašeno");
+        }); 
+    
+        const predmet = prisustvaPredmeta.find(pr => pr.predmet == req.params.NAZIV);
+        res.json(predmet); 
+    });
+
+    
+});
+
 
 
 app.listen(3000);
