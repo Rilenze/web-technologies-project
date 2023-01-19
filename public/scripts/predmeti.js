@@ -83,6 +83,11 @@ function azurirajPrisustvo(divTable, prisustva, trenutnaSedmica = null) {
                     if (j<brojPredavanjaSedmicno) brojPredavanja++;
                     else brojVjezbi++;
                 }
+                else {
+                    console.log("belo polje");
+                    if (j<brojPredavanjaSedmicno) brojPredavanja++;
+                    else brojVjezbi++;
+                }
                 let indeks = table.rows[i].cells[1].innerHTML;
 
                 const prisustvo = {sedmica : trenutnaSedmica, predavanja : brojPredavanja, vjezbe : brojVjezbi};

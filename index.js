@@ -78,16 +78,32 @@ app.post('/prisustvo/predmet/:NAZIV/student/:index', function(req, res){
     fs.readFile('public/data/prisustva.json', function(err, data){
         let prisustvaPredmeta = JSON.parse(data);
 
+
         for (let i=0; i<prisustvaPredmeta.length; i++) {
-            for (let j=0; j<prisustvaPredmeta[i].prisustva.length; j++) {
-                let element = prisustvaPredmeta[i].prisustva[j];
-                if (element.index == req.params.index && element.sedmica == sedmica) {
-                    prisustvaPredmeta[i].prisustva[j].predavanja = predavanja;
-                    prisustvaPredmeta[i].prisustva[j].vjezbe = vjezbe;
-                    break;
+            if (prisustvaPredmeta[i].predmet == req.params.NAZIV) {
+                let nadjen = false;
+                for (let j=0; j<prisustvaPredmeta[i].prisustva.length; j++) {
+                    let element = prisustvaPredmeta[i].prisustva[j];
+                    if (element.index == req.params.index && element.sedmica == sedmica) {
+                        prisustvaPredmeta[i].prisustva[j].predavanja = predavanja;
+                        prisustvaPredmeta[i].prisustva[j].vjezbe = vjezbe;
+                        nadjen = true;
+                        break;
+                    }
+                }
+                if (!nadjen) {
+                    const novoPrisustvo = {
+                        "sedmica" : sedmica,
+                        "predavanja" : predavanja,
+                        "vjezbe" : vjezbe,
+                        "index" : req.params.index
+                    }
+                    prisustvaPredmeta[i].prisustva.push(novoPrisustvo);
                 }
             }
         }
+
+        
 
         fs.writeFile('public/data/prisustva.json', JSON.stringify(prisustvaPredmeta), function(err){
             if (err) console.log(err);
