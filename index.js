@@ -15,10 +15,6 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/public/html'));
 
-/*app.get('/', function(req, res){
-    res.sendFile(__dirname + '/public/html/prijava.html');
-});*/
-
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/html/prijava.html');
 });
@@ -107,7 +103,7 @@ app.post('/prisustvo/predmet/:NAZIV/student/:index', function(req, res){
 
         fs.writeFile('public/data/prisustva.json', JSON.stringify(prisustvaPredmeta), function(err){
             if (err) console.log(err);
-            console.log("Spašeno");
+            console.log("Ažurirana datoteka prisustva.json");
         }); 
     
         const predmet = prisustvaPredmeta.find(pr => pr.predmet == req.params.NAZIV);

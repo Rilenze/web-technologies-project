@@ -41,7 +41,7 @@
             },
             {
                 "sedmica": 2,
-                "predavanja": 2,
+                "predavanja": 1,
                 "vjezbe": 1,
                 "index": 15354
             },
@@ -78,18 +78,18 @@
             {
                 "sedmica": 8,
                 "predavanja": 3,
-                "vjezbe": 0,
+                "vjezbe": 1,
                 "index": 15354
             },
             {
                 "sedmica": 7,
-                "predavanja": 3,
+                "predavanja": 2,
                 "vjezbe": 1,
                 "index": 18714
             },
             {
                 "sedmica": 3,
-                "predavanja": 3,
+                "predavanja": 2,
                 "vjezbe": 2,
                 "index": 15354
             },
@@ -98,6 +98,18 @@
                 "predavanja": 1,
                 "vjezbe": 0,
                 "index": "15354"
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": "14352"
+            },
+            {
+                "sedmica": 3,
+                "predavanja": 1,
+                "vjezbe": 0,
+                "index": "14352"
             }
         ],
         "predmet": "Web tehnologije",
@@ -227,7 +239,7 @@
         "prisustva": [
             {
                 "sedmica": 1,
-                "predavanja": 3,
+                "predavanja": 2,
                 "vjezbe": 2,
                 "index": 18714
             },
@@ -270,7 +282,7 @@
             {
                 "sedmica": 4,
                 "predavanja": 3,
-                "vjezbe": 1,
+                "vjezbe": 0,
                 "index": 14352
             },
             {
@@ -308,6 +320,18 @@
                 "predavanja": 1,
                 "vjezbe": 1,
                 "index": "14352"
+            },
+            {
+                "sedmica": 6,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": "15354"
+            },
+            {
+                "sedmica": 8,
+                "predavanja": 0,
+                "vjezbe": 1,
+                "index": "18714"
             }
         ],
         "predmet": "Razvoj programskih rješenja",

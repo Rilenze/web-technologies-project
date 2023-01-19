@@ -32,25 +32,17 @@ function callbackPredmet(error, data) {
     else console.log(error);
 }
 
-function azurirajPrisustvo(divTable, prisustva, trenutnaSedmica = null) {
+function azurirajPrisustvo(divTable, prisustva) {
+
     let table = divTable.firstChild;
 
     const redovi = table.rows.length;
-    const kolone = table.rows[1].cells.length;
 
     const brojPredavanjaSedmicno = prisustva.brojPredavanjaSedmicno;
     const brojVjezbiSedmicno = prisustva.brojVjezbiSedmicno;
     const ukupno = brojPredavanjaSedmicno + brojVjezbiSedmicno;
-    
-    if (trenutnaSedmica == null) {
-        for (let i=1; i<kolone; i++) {
-            let cell = table.rows[1].cells[i]
-            if (cell.firstChild.tagName == "TABLE") {
-                trenutnaSedmica = i-1;
-                break;
-            }
-        }
-    }
+
+    let trenutnaSedmica = nadjiTrenutnuSedmicu(table);
 
     for (let i=1; i<redovi; i++) {
         let miniTable = table.rows[i].cells[trenutnaSedmica+1].firstChild;
@@ -84,7 +76,6 @@ function azurirajPrisustvo(divTable, prisustva, trenutnaSedmica = null) {
                     else brojVjezbi++;
                 }
                 else {
-                    console.log("belo polje");
                     if (j<brojPredavanjaSedmicno) brojPredavanja++;
                     else brojVjezbi++;
                 }
@@ -99,12 +90,36 @@ function azurirajPrisustvo(divTable, prisustva, trenutnaSedmica = null) {
 
 function callBackPrisutvo(error, data) {
     if (error == null) {
-        console.log("uslo je");
-        TabelaPrisustvo(div, data);
+        let trenutnaSedmica = nadjiTrenutnuSedmicu(div.firstChild);
+        let klasa = TabelaPrisustvo(div, data);
+        pomjeriPremaTrenutnoj(klasa, data, trenutnaSedmica);
         azurirajPrisustvo(div, data);
     }
     else {
         console.log("greška");
+    }
+}
+
+function nadjiTrenutnuSedmicu(table) {
+    const kolone = table.rows[1].cells.length;
+    let trenutnaSedmica = null;
+    for (let i=1; i<kolone; i++) {
+        let cell = table.rows[1].cells[i]
+        if (cell.firstChild.tagName == "TABLE") {
+            trenutnaSedmica = i-1;
+            break;
+        }
+    }
+    return trenutnaSedmica;
+}
+
+function pomjeriPremaTrenutnoj(klasa, podaci, trenutnaSedmica) {
+    let zadnjaSedmica = podaci.prisustva[podaci.prisustva.length - 1].sedmica;
+    for (let i=zadnjaSedmica; i<trenutnaSedmica; i++) {
+        klasa.sljedecaSedmica();
+    }
+    for (let i=trenutnaSedmica; i<zadnjaSedmica; i++) {
+        klasa.prethodnaSedmica();
     }
 }
 

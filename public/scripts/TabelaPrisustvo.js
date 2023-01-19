@@ -181,12 +181,6 @@ let TabelaPrisustvo = function(divRef, podaci) {
                         else if (k > prisustvaStudenta.predavanja)
                             cell.style.backgroundColor = "rgb(245, 65, 65)";
                     }
-                    /*cell.addEventListener('click', function(){
-                        if (cell.style.backgroundColor == "rgb(69, 190, 69)")
-                            cell.style.backgroundColor = "rgb(245, 65, 65)";
-                        else if (cell.style.backgroundColor == "rgb(245, 65, 65)")
-                            cell.style.backgroundColor = "rgb(69, 190, 69)";     
-                    });*/
                     miniRow2.appendChild(cell);
                 }
                 for (let k=1; k<=brojVjezbiSedmicno; k++) {
@@ -349,7 +343,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
             //cellSljedeca.style = "width: 12%;";
             
         } 
-        azurirajPrisustvo(divRef, podaci, trenutnaSedmica);
+        azurirajPrisustvo(divRef, podaci);
     }
     
     let prethodnaSedmica = function() {
@@ -438,7 +432,7 @@ let TabelaPrisustvo = function(divRef, podaci) {
             cellSljedeca.appendChild(miniTabela);
             
         } 
-        azurirajPrisustvo(divRef, podaci, trenutnaSedmica);
+        azurirajPrisustvo(divRef, podaci);
     }
 
     btnLijevo.onclick = prethodnaSedmica;
