@@ -21,13 +21,13 @@
     },
     {
     "nastavnik": {
-    "username": "r",
-    "password_hash": "$2b$10$/ZTbOPd71MLKkzjfxBISfO.oErW7OGxtELsqW6XDTbMi3/ruN3ht2"
+    "username": "Salko Limar",
+    "password_hash": "$2b$10$e3Dnq7IHsTcbCVwj7fdQXu/MwecbVIrcZwbrwsJM1ib/Sg2Mm8NC6"
     },
     "predmeti": [
-    "PREDMET1",
-    "PREDMET2",
-    "PREDMET3"
+    "Web tehnologije",
+    "Tehnike programiranja",
+    "Razvoj programskih rješenja"
     ]
     }
 ]

@@ -10,9 +10,11 @@ function callBackPredmeti(error, data) {
             let naziv = document.createTextNode(element);
 
             a.appendChild(naziv);
+            a.title = naziv;
+            a.href = "#";
             li.appendChild(a);
             listaPredmeta.appendChild(li);
-            
+
             a.addEventListener('click', function(){
                 PoziviAjax.getPredmet(a.id, callbackPredmet);
             });
@@ -74,12 +76,10 @@ function azurirajPrisustvo(divTable, prisustva, trenutnaSedmica = null) {
 
             cell.addEventListener('click', function(){
                 if (cell.style.backgroundColor == "rgb(69, 190, 69)") {
-                    //cell.style.backgroundColor = "rgb(245, 65, 65)"
                     if (j<brojPredavanjaSedmicno) brojPredavanja--;
                     else brojVjezbi--;
                 }
                 else if (cell.style.backgroundColor == "rgb(245, 65, 65)") {
-                    //cell.style.backgroundColor = "rgb(69, 190, 69)"
                     if (j<brojPredavanjaSedmicno) brojPredavanja++;
                     else brojVjezbi++;
                 }

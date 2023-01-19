@@ -3,3 +3,11 @@
     width: 20%;
     padding: 10em 0;
 }
+
+#username, #password {
+    width: 70%;
+}
+
+#dugmeLogin {
+    width: 73%;
+}
