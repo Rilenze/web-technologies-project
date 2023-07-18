@@ -21,6 +21,10 @@ td > table > tr > td{
     padding: 20px;
 }
 
+.trenutnoPolje {
+    width: 35px;
+}
+
 /*
 .red {
    height: 40px; 

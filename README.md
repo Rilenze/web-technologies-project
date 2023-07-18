@@ -30,13 +30,15 @@ The project is designed to be used by professors at faculties for tracking stude
 - Username: Profesor1
 - Password: Sifra1
 
-Once logged in, you will be able to enter the presence of students and utilize other features provided by the project.
+Once logged in, you will see a list of subjects where you are assigned as a professor. Clicking on a subject will display a table with the attendance of all students enrolled in that subject. The table is organized by weeks, and the current week column will contain green and red boxes to indicate if a student was present or not. Arrows are provided to navigate between past and future weeks.
 
 ## Features
 
 - User authentication: Professors can log in with their username and password to access the system.
-- Student attendance tracking: Professors can enter the presence of students to keep track of their attendance.
+- Subject selection: Professors can view a list of subjects they are assigned to and select a subject to view attendance details.
+- Student attendance tracking: Professors can view attendance tables for selected subjects, organized by weeks. Current week column highlights student attendance with green and red boxes.
 - Attendance cancellation: Professors can cancel the presence of students if needed.
+- Week navigation: Arrows are provided to navigate between past and future weeks for easy access to attendance records.
 - User-friendly interface: The project provides an intuitive interface for easy navigation and interaction.
 
 ## Acknowledgements

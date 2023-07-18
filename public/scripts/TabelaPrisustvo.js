@@ -153,6 +153,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
         for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
           let cellP = document.createElement("td");
+          cellP.className = "trenutnoPolje";
           let tekstP = "P" + k;
           let polje = document.createTextNode(tekstP);
           cellP.appendChild(polje);
@@ -161,6 +162,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
         for (let k = 1; k <= brojVjezbiSedmicno; k++) {
           let cellV = document.createElement("td");
+          cellV.className = "trenutnoPolje";
           let tekstV = "V" + k;
           let polje = document.createTextNode(tekstV);
           cellV.appendChild(polje);
@@ -278,12 +280,14 @@ let TabelaPrisustvo = function (divRef, podaci) {
       cellSljedeca.innerHTML = "";
 
       let miniTabela = document.createElement("table");
+      miniTabela.style = "table-layout: fixed;";
 
       // Vjezbe i predavanja
       let miniRow = document.createElement("tr");
 
       for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
         let cellP = document.createElement("td");
+        cellP.className = "trenutnoPolje";
         let tekstP = "P" + k;
         let polje = document.createTextNode(tekstP);
         cellP.appendChild(polje);
@@ -292,6 +296,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
       for (let k = 1; k <= brojVjezbiSedmicno; k++) {
         let cellV = document.createElement("td");
+        cellV.className = "trenutnoPolje";
         let tekstV = "V" + k;
         let polje = document.createTextNode(tekstV);
         cellV.appendChild(polje);
@@ -371,12 +376,14 @@ let TabelaPrisustvo = function (divRef, podaci) {
       cellSljedeca.innerHTML = "";
 
       let miniTabela = document.createElement("table");
+      miniTabela.style = "table-layout: fixed;";
 
       // Vjezbe i predavanja
       let miniRow = document.createElement("tr");
 
       for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
         let cellP = document.createElement("td");
+        cellP.className = "trenutnoPolje";
         let tekstP = "P" + k;
         let polje = document.createTextNode(tekstP);
         cellP.appendChild(polje);
@@ -385,6 +392,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
       for (let k = 1; k <= brojVjezbiSedmicno; k++) {
         let cellV = document.createElement("td");
+        cellV.className = "trenutnoPolje";
         let tekstV = "V" + k;
         let polje = document.createTextNode(tekstV);
         cellV.appendChild(polje);
