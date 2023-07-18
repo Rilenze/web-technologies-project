@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#logout {
+    background-color: rgb(62, 125, 184);
+    font-weight: bold;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    margin: 20px;
+}
+
+#logout:hover {
+    opacity: 0.7;
+}
+
+#listaPredmeta li {
+    margin: 15px;
+}
+
+#listaPredmeta li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#listaPredmeta li a:hover {
+    background-color: rgb(62, 125, 184);
+    color: white;
+}
+
+.Arrow {
+    background-color: rgb(62, 125, 184); 
+    border: 0;
+    border-radius: 10px;
+    margin: 20px 10px 10px 0px;
+}
+
+.Arrow:hover {
+    opacity: 0.7;
+}
+
+.Arrow i {
+    color: white;
+}
+
+#arrowsContainer {
+    display: flex;
+    justify-content: center;
+    margin-right: 50px;
+}

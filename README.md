@@ -1,6 +1,6 @@
 # Web Technologies Project
 
-This project was developed as part of the "Web Technologies" course. It is built using VanillaJS, NodeJS, ExpressJS, and AJAX. 
+This project was developed as part of the "Web Technologies" course. It is built using VanillaJS, NodeJS, ExpressJS, and AJAX.
 The goal of this project is to provide a web-based solution for professors at faculties to track student attendance.
 
 ## Getting Started
@@ -27,8 +27,8 @@ Make sure you have the following software installed on your system:
 
 The project is designed to be used by professors at faculties for tracking student attendance. Professors need to log in with their username and password. However, for testing purposes, you can use the following credentials to access all features of the project:
 
-- Username: Salko Limar
-- Password: Limarstvo23
+- Username: Profesor1
+- Password: Sifra1
 
 Once logged in, you will be able to enter the presence of students and utilize other features provided by the project.
 
@@ -43,4 +43,3 @@ Once logged in, you will be able to enter the presence of students and utilize o
 
 This project was developed as part of the "Web Technologies" course and benefited from the guidance and support of the course instructors.
 Thank you for your interest in this project!
-
