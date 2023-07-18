@@ -16,6 +16,7 @@
 
 #logout:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
 
 #listaPredmeta li {
@@ -51,6 +52,7 @@
 
 .Arrow:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
 
 .Arrow i {
