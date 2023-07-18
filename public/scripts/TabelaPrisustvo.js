@@ -69,6 +69,9 @@ let TabelaPrisustvo = function (divRef, podaci) {
     return;
   }
 
+  let nazivPredmeta = document.getElementById("nazivPredmeta");
+  nazivPredmeta.innerText = podaci.predmet;
+
   // Pravljenje tabele
 
   let maksimalnaSedmica = sedmice[sedmice.length - 1];

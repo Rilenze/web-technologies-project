@@ -19,7 +19,7 @@
 }
 
 #listaPredmeta li {
-    margin: 15px;
+    margin: 10px;
 }
 
 #listaPredmeta li a {
@@ -33,6 +33,13 @@
 #listaPredmeta li a:hover {
     background-color: rgb(62, 125, 184);
     color: white;
+}
+
+#nazivPredmeta {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 .Arrow {
