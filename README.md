@@ -32,6 +32,8 @@ The project is designed to be used by professors at faculties for tracking stude
 
 Once logged in, you will see a list of subjects where you are assigned as a professor. Clicking on a subject will display a table with the attendance of all students enrolled in that subject. The table is organized by weeks, and the current week column will contain green and red boxes to indicate if a student was present or not. Arrows are provided to navigate between past and future weeks.
 
+For a visual demonstration, please check out our [Demo Video](https://youtu.be/CkWWloLQObU).
+
 ## Features
 
 - User authentication: Professors can log in with their username and password to access the system.
