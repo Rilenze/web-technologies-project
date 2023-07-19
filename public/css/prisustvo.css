@@ -25,6 +25,11 @@ td > table > tr > td{
     width: 35px;
 }
 
+.kocka:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 /*
 .red {
    height: 40px; 

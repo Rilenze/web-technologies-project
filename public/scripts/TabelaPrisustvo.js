@@ -101,7 +101,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
 
   let header1 = document.createElement("th");
   let textHeader1 = document.createTextNode("Ime i prezime");
-  header1.style = "width: 15%;";
+  header1.style = "width: 15%; height: 30px;";
   header1.appendChild(textHeader1);
   headerRow.appendChild(header1);
 
@@ -184,6 +184,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
         let miniRow2 = document.createElement("tr");
         for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
           let cell = document.createElement("td");
+          cell.className = "kocka";
 
           if (prisustvaStudenta != null) {
             if (k <= prisustvaStudenta.predavanja)
@@ -195,6 +196,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
         }
         for (let k = 1; k <= brojVjezbiSedmicno; k++) {
           let cell = document.createElement("td");
+          cell.className = "kocka";
 
           if (prisustvaStudenta != null) {
             if (k <= prisustvaStudenta.vjezbe)
@@ -332,6 +334,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
       let miniRow2 = document.createElement("tr");
       for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
         let cellKocka = document.createElement("td");
+        cellKocka.className = "kocka";
 
         if (prisustvaStudenta != null) {
           if (k <= prisustvaStudenta.predavanja)
@@ -344,6 +347,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
       }
       for (let k = 1; k <= brojVjezbiSedmicno; k++) {
         let cellKocka = document.createElement("td");
+        cellKocka.className = "kocka";
 
         if (prisustvaStudenta != null) {
           if (k <= prisustvaStudenta.vjezbe)
@@ -427,6 +431,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
       let miniRow2 = document.createElement("tr");
       for (let k = 1; k <= brojPredavanjaSedmicno; k++) {
         let cellKocka = document.createElement("td");
+        cellKocka.className = "kocka";
 
         if (prisustvaStudenta != null) {
           if (k <= prisustvaStudenta.predavanja)
@@ -439,6 +444,7 @@ let TabelaPrisustvo = function (divRef, podaci) {
       }
       for (let k = 1; k <= brojVjezbiSedmicno; k++) {
         let cellKocka = document.createElement("td");
+        cellKocka.className = "kocka";
 
         if (prisustvaStudenta != null) {
           if (k <= prisustvaStudenta.vjezbe)
